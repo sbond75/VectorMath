@@ -35,7 +35,7 @@ import Foundation
 
 // MARK: Types
 
-public typealias Scalar = Float
+public typealias Scalar = Double
 
 public struct Vector2: Hashable {
     public var x: Scalar
@@ -363,6 +363,12 @@ public extension Vector3 {
 
     static func ~= (lhs: Vector3, rhs: Vector3) -> Bool {
         return lhs.x ~= rhs.x && lhs.y ~= rhs.y && lhs.z ~= rhs.z
+    }
+    
+    static func *=(lhs: inout Vector3, rhs: Scalar) {
+        lhs.x *= rhs
+        lhs.y *= rhs
+        lhs.z *= rhs
     }
 }
 
